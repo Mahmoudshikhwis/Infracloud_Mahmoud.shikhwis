@@ -1,6 +1,13 @@
-from flask import Flask
+"""Flask Login Example and instagram fallowing find"""
 
-app = flask(__name__)
+from flask import Flask, url_for, render_template, flash, request, redirect, session,logging,request
+
+
+
+
+app = Flask(__name__)
+
+
 
 @app.route("/")
 def index():
@@ -11,6 +18,10 @@ def index():
 def who():
     return"who are you?"
 
-@app.route("/hi/<username>")
-def greet(username):
-    return f"hi there, {username}"
+
+
+
+if __name__ == '__main__':
+	app.debug = True
+	app.secret_key = "124"
+	app.run(host='127.0.0.1')
